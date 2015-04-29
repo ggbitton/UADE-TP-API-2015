@@ -1,6 +1,5 @@
 package controlador;
 
-import java.util.Collection;
 import java.util.Date;
 import java.util.Vector;
 
@@ -8,6 +7,8 @@ import modelo.Colocacion;
 import modelo.PautaColocacion;
 import modelo.Publicacion;
 import modelo.Vendedor;
+
+import vista.PautaView;
 
 //
 //
@@ -25,23 +26,40 @@ public class Sistema {
 	private Vector<Publicacion> publicaciones;
 	private Vector<PautaColocacion> pautasColocacion;
 	private Vector<Colocacion> colocaciones;
+
 	public void realizarColocacion(int codigoEdicion, Date fechaSalida) {
-	
+
 	}
-	
+
 	public void agregarEdicion() {
-	
+
 	}
-	
+
 	public void borrarEdicion(int codigoEdicion) {
-	
+
 	}
-	
-	public Vector<PautaColocacion> obtenerPautas() {
+
+	public Vector<PautaView> obtenerPautas() {
+		Vector<PautaView> vistaPautas = new Vector<PautaView>();
+		for (int i = 0; i < pautasColocacion.size(); i++) {
+			vistaPautas.add(pautasColocacion.elementAt(i).obtenerVista());
+		}
+		return vistaPautas;
+	}
+
+	public void activarPauta(int codigo) {
+		PautaColocacion p = buscarPauta(codigo);
+		if (p != null) {
+			p.setActiva(true);
+		}
+	}
+
+	private PautaColocacion buscarPauta(int codigo) {
+		for (int i = 0; i < pautasColocacion.size(); i++) {
+			if (pautasColocacion.elementAt(i).sosLaPauta(codigo)) {
+				return pautasColocacion.elementAt(i);
+			}
+		}
 		return null;
-	}
-	
-	public void activarPauta() {
-	
 	}
 }
