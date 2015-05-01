@@ -22,7 +22,9 @@ public abstract class PautaColocacion {
 	private boolean activa;
 	private int codigo;
 	public abstract int obtenerCarga(Vendedor ven, Vector<Colocacion> col);
-	public abstract PautaView obtenerVista();
+	public PautaView obtenerVista() {
+		return null;
+	}
 	public boolean estasActiva() {
 		return this.activa;
 	}

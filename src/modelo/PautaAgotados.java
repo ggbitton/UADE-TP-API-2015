@@ -20,11 +20,7 @@ import vista.PautaView;
 
 public class PautaAgotados extends PautaColocacion {
 	private int cantUltimasEdiciones;
-	public int obtenerCarga(Object Vendedor ven, Object Collection<Colocacion> col) {
-	
-	}
-	
-	public PautaView obtenerVista() {
+	public int obtenerCarga(Vendedor ven, Vector<Colocacion> col) {
 	
 	}
 	

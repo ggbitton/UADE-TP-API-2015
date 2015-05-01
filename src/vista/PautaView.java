@@ -48,4 +48,16 @@ public class PautaView {
 	public void setZona(String zona) {
 		this.zona = zona;
 	}
+
+	public String getNombre() {
+		if (cantUltimasEdiciones != 0) {
+			return "Pauta por agotados: "
+					+ Integer.toString(cantUltimasEdiciones)
+					+ " últimas ediciones";
+		} else if (!this.zona.isEmpty()) {
+			return "Pauta por zona: " + zona;
+		} else {
+			return "Pauta por exceso";
+		}
+	}
 }
