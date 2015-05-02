@@ -1,6 +1,5 @@
 package vista;
 
-import java.util.ArrayList;
 import java.util.Vector;
 
 import modelo.ItemColocacion;
