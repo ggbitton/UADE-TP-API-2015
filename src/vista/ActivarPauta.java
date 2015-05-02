@@ -71,7 +71,7 @@ public class ActivarPauta extends javax.swing.JFrame {
 					private int obtenerPautaSeleccionada() {
 						cbxListaPautas.getSelectedIndex();
 
-						return null;
+						return 0;
 					}
 				});
 			}
