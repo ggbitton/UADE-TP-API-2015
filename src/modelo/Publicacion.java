@@ -1,5 +1,6 @@
 package modelo;
 
+import java.util.Date;
 import java.util.Vector;
 
 //
@@ -28,4 +29,10 @@ public abstract class Publicacion {
 	private String paisDeOrigen;
 	private Vector<Edicion> ediciones;
 	public abstract void getUltimasTresEdiciones();
+	
+	public void agregarEdicion(String tituloEdicion, float precio, Date fechaSalida) {
+		Edicion edicionNueva = new Edicion(tituloEdicion, precio, fechaSalida);
+		
+		ediciones.add(edicionNueva.getCodigoEdicion(), edicionNueva);
+	}
 }

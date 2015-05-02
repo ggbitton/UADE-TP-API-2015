@@ -2,27 +2,29 @@ package modelo;
 
 import java.util.Date;
 
+import persistencia.MapperEdicion;
+
 public class Edicion {
-	private static int codigoEdicion;
+	private int codigoEdicion;
 	private String tituloTapa;
 	private float precio;
 	private Date fechaSalida;
 	private boolean borrado;
 	
-	public Edicion(String tituloTapa, float precio, Date fechaSalida,
-			boolean borrado) {
+	public Edicion(String tituloTapa, float precio, Date fechaSalida) {
 		this.tituloTapa = tituloTapa;
 		this.precio = precio;
 		this.fechaSalida = fechaSalida;
-		this.borrado = borrado;
-		codigoEdicion = codigoEdicion++;
+		this.borrado = false;
+		
+		this.codigoEdicion = MapperEdicion.getInstancia().insert(this);
 	}
 	
-	public static int getCodigoEdicion() {
+	public  int getCodigoEdicion() {
 		return codigoEdicion;
 	}
-	public static void setCodigoEdicion(int codigoEdicion) {
-		Edicion.codigoEdicion = codigoEdicion;
+	public void setCodigoEdicion(int codigoEdicion) {
+		this.codigoEdicion = codigoEdicion;
 	}
 	public String getTituloTapa() {
 		return tituloTapa;

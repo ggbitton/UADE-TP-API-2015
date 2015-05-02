@@ -9,7 +9,6 @@ import modelo.PautaColocacion;
 import modelo.Publicacion;
 import modelo.Vendedor;
 import vista.VendedorView;
-
 import vista.PautaView;
 
 public class Sistema {
@@ -23,8 +22,13 @@ public class Sistema {
 		//Devuelve una colección de "VendedoresView" que solo tiene el "NroVendedor" y una colección de "ItemColocacion".
 	}
 
-	public void agregarEdicion() {
-
+	public void agregarEdicion(int codigoPublicacion, String tituloEdicion, float precio, Date fechaSalida) {
+		try {
+			publicaciones.elementAt(codigoPublicacion).agregarEdicion(tituloEdicion, precio, fechaSalida);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void borrarEdicion(int codigoEdicion) {
