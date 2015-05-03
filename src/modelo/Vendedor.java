@@ -22,6 +22,7 @@ public class Vendedor {
 
 	public int getNroVendedor() {
 		return nroVendedor;
+		//prueba
 	}
 
 	public void setNroVendedor(int nroVendedor) {
